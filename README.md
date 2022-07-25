@@ -38,4 +38,8 @@ http://localhost:9529
 
 #### 效果图
 
-![image-20220725151934606](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220725151934606.png)
+![image-1](https://gitee.com/xhs101/vue-case/raw/master/public/static/images/1.jpg)
+
+![image-2](https://gitee.com/xhs101/vue-case/raw/master/public/static/images/2.jpg)
+
+![image-3](https://gitee.com/xhs101/vue-case/raw/master/public/static/images/3.jpg)
