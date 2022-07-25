@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-Vue.use(Router)
-
 /* Layout */
 import Layout from '@/layout'
+
+Vue.use(Router)
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -42,7 +41,7 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
+  // 首页
   {
     path: '/',
     component: Layout,
@@ -51,145 +50,61 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '首页', icon: 'QQ空间' }
+      meta: {title: '首页', icon: 'QQ空间'}
     }]
   },
 
+  // 地图
   {
-    path: '/example',
+    path: '/echart',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: '组件', icon: '苹果' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: '百度' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: '微博' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: '微软' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: '朋友圈'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: '官网地址', icon: '提交成功' }
-      }
-    ]
-  },
-
-  {
-    path: '/icons',
-    component: Layout,
-    redirect: '/eicons',
-    name: '小图标',
+    name: 'echart',
+    meta: {title: '地图', icon: 'el-icon-location'},
     alwaysShow: true,
-    meta: { title: '小图标', icon: 'el-icon-s-help' },
     children: [
+      {
+        path: 'map',
+        component: () => import('@/views/echart/index'),
+        name: 'map',
+        meta: {title: '中国地图', icon: 'el-icon-s-marketing'}
+      }
+    ]
+  },
+  // 工具
+  {
+    path: '/tools',
+    component: Layout,
+    name: 'echart',
+    meta: {title: '工具', icon: 'el-icon-s-cooperation'},
+    alwaysShow: true,
+    children: [
+      {
+        path: 'map',
+        component: () => import('@/views/tools/tinymce/tinymce'),
+        name: 'map',
+        meta: {title: '富文本编辑器', icon: '富文本编辑器'}
+      },
       {
         path: 'icons',
         name: 'icons',
-        component: () => import('@/views/icons/svg-icon'),
-        meta: { title: 'svg小图标', icon: '知乎' }
+        component: () => import('@/views/tools/icons/svg-icon'),
+        meta: {title: 'svg小图标', icon: '知乎'}
       },
       {
         path: 'svg',
         name: 'Svg',
-        component: () => import('@/views/icons/index'),
-        meta: { title: '选择小图标', icon: 'wordpress' }
+        component: () => import('@/views/tools/icons/index'),
+        meta: {title: '选择小图标', icon: 'wordpress'}
       }
     ]
   },
-
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: constantRoutes
 })
 
