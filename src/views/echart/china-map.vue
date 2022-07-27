@@ -123,9 +123,9 @@ export default {
         const provinceInfo = getProvinceMapInfo(arg.name)
         // 如果存在key执行下面内容
         if(provinceInfo.key !== undefined){
-          var url = window.location.origin + provinceInfo.path
+          // var url = window.location.origin + provinceInfo.path
           // 获取static下面的json数据
-          const res = await axios.get(url)
+          const res = await axios.get(provinceInfo.path)
           echarts.registerMap(provinceInfo.key, res.data)
           const changeOption={
             geo:{
