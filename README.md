@@ -20,17 +20,19 @@ vue 2.6.10 + vue-router 3.0.6 + vuex 3.1.0 + axios + echarts 5.3.3 + tinymce 5.1
 
 ```
 <!--安装依赖-->
-`npm install`
-<!--项目启动-->
+npm install
 
-`npm run dev`
+<!--安装tinymce依赖-->
+ npm install tinymce@5.1.0 -S
+ 
+ npm install @tinymce/tinymce-vue@3.0.1 -S
+<!--项目启动-->
+npm run dev
 
 <!--访问项目-->
-
 http://localhost:9529
 
 账号：admin
-
 密码：123456
 ```
 
