@@ -98,6 +98,22 @@ export const constantRoutes = [
       }
     ]
   },
+  // form表单
+  {
+    path: '/form',
+    component: Layout,
+    meta: {title: 'form表单', icon: 'el-icon-s-cooperation'},
+    alwaysShow: true,
+    children: [
+      {
+        path: 'form',
+        component: () => import('@/views/form/index'),
+        name: 'form',
+        meta: {title: '自定义校验规则', icon: 'ie浏览器'}
+      },
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   {path: '*', redirect: '/404', hidden: true}
 ]
