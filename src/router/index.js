@@ -102,14 +102,30 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
-    meta: {title: 'form表单', icon: 'el-icon-s-cooperation'},
+    meta: {title: 'form表单', icon: '操作日志'},
     alwaysShow: true,
     children: [
       {
         path: 'form',
         component: () => import('@/views/form/index'),
         name: 'form',
-        meta: {title: '自定义校验规则', icon: 'ie浏览器'}
+        meta: {title: '自定义校验规则', icon: '检查查询'}
+      },
+    ]
+  },
+
+  // 文件
+  {
+    path: '/file',
+    component: Layout,
+    meta: {title: '文件', icon: '上传文件'},
+    alwaysShow: true,
+    children: [
+      {
+        path: 'form',
+        component: () => import('@/views/file/file-img'),
+        name: 'form',
+        meta: {title: '上传图片', icon: '上传图片'}
       },
     ]
   },
