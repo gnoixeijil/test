@@ -30,6 +30,7 @@ module.exports = {
   assetsDir: 'static',
   lintOnSave: false,
   productionSourceMap: false,
+  transpileDependencies:[/node_modules/],
   devServer: {
     port: port,
     open: false,
@@ -50,6 +51,8 @@ module.exports = {
     }
   },
   chainWebpack(config) {
+    // 兼容IE浏览器
+    config.entry.app = ['babel-polyfill', './src/main.js'];
     // it can improve the speed of the first screen, it is recommended to turn on preload
     config.plugin('preload').tap(() => [
       {

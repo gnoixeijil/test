@@ -95,6 +95,12 @@ export const constantRoutes = [
         name: 'Svg',
         component: () => import('@/views/tools/icons/index'),
         meta: {title: '选择小图标', icon: 'wordpress'}
+      },
+      {
+        path: 'pdf',
+        name: 'Pdf',
+        component: () => import('@/views/tools/pdf/index'),
+        meta: {title: 'PDF预览', icon: 'wordpress'}
       }
     ]
   },
