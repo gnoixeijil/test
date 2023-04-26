@@ -1,7 +1,7 @@
 <template>
   <div class='app-container'>
     <el-form :model="ruleForm" ref="ruleForm" class="demo-ruleForm">
-      <el-row :span="10">
+      <el-row :span="11">
         <el-col :span="10">
           <el-form-item label="头像">
             <el-upload class="avatar-uploader" action :show-file-list="false" :http-request="uploadImg">
@@ -12,7 +12,6 @@
         </el-col>
       </el-row>
     </el-form>
-
   </div>
 </template>
 
@@ -24,7 +23,6 @@ export default {
       ruleForm: {
         imageUrl: '',
       }
-
     }
   },
   methods: {
@@ -34,11 +32,9 @@ export default {
     }
   }
 }
-
-
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
   border-radius: 6px;
@@ -46,9 +42,11 @@ export default {
   position: relative;
   overflow: hidden;
 }
+
 .avatar-uploader .el-upload:hover {
   border-color: #409EFF;
 }
+
 .avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;
@@ -56,7 +54,9 @@ export default {
   height: 178px;
   line-height: 178px;
   text-align: center;
+  border: 1px dashed dodgerblue;
 }
+
 .avatar {
   width: 178px;
   height: 178px;

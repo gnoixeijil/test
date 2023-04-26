@@ -94,28 +94,44 @@ export const constantRoutes = [
         path: 'svg',
         name: 'Svg',
         component: () => import('@/views/tools/icons/index'),
-        meta: {title: '选择小图标', icon: 'wordpress'}
+        meta: {title: '选择小图标', icon: '谷歌'}
       },
       {
         path: 'pdf',
         name: 'Pdf',
         component: () => import('@/views/tools/pdf/index'),
-        meta: {title: 'PDF预览', icon: 'wordpress'}
+        meta: {title: 'PDF预览', icon: 'pdf预览'}
       }
     ]
   },
-  // form表单
+  // Form表单
   {
     path: '/form',
     component: Layout,
-    meta: {title: 'form表单', icon: '操作日志'},
+    meta: {title: 'Form表单', icon: '表单'},
     alwaysShow: true,
     children: [
       {
         path: 'form',
         component: () => import('@/views/form/index'),
         name: 'form',
-        meta: {title: '自定义校验规则', icon: '检查查询'}
+        meta: {title: '自定义校验规则', icon: '表单校验'}
+      },
+    ]
+  },
+
+  // table表格
+  {
+    path: '/table',
+    component: Layout,
+    meta: {title: 'Table表格', icon: '表格'},
+    alwaysShow: true,
+    children: [
+      {
+        path: 'table',
+        component: () => import('@/views/table/index'),
+        name: 'table',
+        meta: {title: '可编辑表格', icon: '可编辑表格'}
       },
     ]
   },

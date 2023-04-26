@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      pdfUrl: 'https://uat.ouyeelf.com/cap-interface/common/attachment/download?id=aecb87fef0d749d699351d8309d56b8d'
+      pdfUrl: '/vue-case.pdf'
     }
   },
   methods: {
