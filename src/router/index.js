@@ -144,9 +144,9 @@ export const constantRoutes = [
     alwaysShow: true,
     children: [
       {
-        path: 'form',
-        component: () => import('@/views/file/file-img'),
-        name: 'form',
+        path: 'upload-img',
+        component: () => import('@/views/file/upload-img'),
+        name: 'upload-img',
         meta: {title: '上传图片', icon: '上传图片'}
       },
     ]
